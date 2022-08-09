@@ -4,6 +4,7 @@ const mobileMenu = document.querySelector('.mobile-menu')
 const iconMenuMobile = document.querySelector('.menu')
 const shoppingCart = document.querySelector('.product-detail')
 const iconShoppingCart = document.querySelector('.navbar-shopping-cart')
+const cardsContainer = document.querySelector('.cards-container')
 
 menuEmail.addEventListener('click', toggleDesktopMenu)
 iconMenuMobile.addEventListener('click', toggleMobileMenu)
@@ -43,3 +44,83 @@ function toggleShoppingCart(){
     shoppingCart.classList.toggle('inactive');
 
 }        
+
+const productList = [];
+productList.push({
+    name: 'Bike',
+    price: '12.000,00',
+    image: 'https://images.pexels.com/photos/2393816/pexels-photo-2393816.jpeg?auto=compress&cs=tinysrgb&w=400'
+})
+productList.push({
+    name: 'Car',
+    price: '20.000,00',
+    image: 'https://images.pexels.com/photos/9993539/pexels-photo-9993539.jpeg?auto=compress&cs=tinysrgb&w=400'
+})
+productList.push({
+    name: 'Bike',
+    price: '12.000,00',
+    image: 'https://images.pexels.com/photos/2393816/pexels-photo-2393816.jpeg?auto=compress&cs=tinysrgb&w=400'
+})
+productList.push({
+    name: 'Car',
+    price: '20.000,00',
+    image: 'https://images.pexels.com/photos/9993539/pexels-photo-9993539.jpeg?auto=compress&cs=tinysrgb&w=400'
+})
+productList.push({
+    name: 'Bike',
+    price: '12.000,00',
+    image: 'https://images.pexels.com/photos/2393816/pexels-photo-2393816.jpeg?auto=compress&cs=tinysrgb&w=400'
+})
+productList.push({
+    name: 'Car',
+    price: '20.000,00',
+    image: 'https://images.pexels.com/photos/9993539/pexels-photo-9993539.jpeg?auto=compress&cs=tinysrgb&w=400'
+})
+productList.push({
+    name: 'Bike',
+    price: '12.000,00',
+    image: 'https://images.pexels.com/photos/2393816/pexels-photo-2393816.jpeg?auto=compress&cs=tinysrgb&w=400'
+})
+productList.push({
+    name: 'Car',
+    price: '20.000,00',
+    image: 'https://images.pexels.com/photos/9993539/pexels-photo-9993539.jpeg?auto=compress&cs=tinysrgb&w=400'
+})
+
+function renderProducts(arr){
+    for(product of productList){
+    const productCards = document.createElement('div');
+    productCards.classList.add('product-card');
+
+    const productImg = document.createElement('img');
+    productImg.setAttribute('src', product.image);
+
+    const productInfo = document.createElement('div');
+    productInfo.classList.add('product-info');
+
+    const productInfoDiv = document.createElement('div');
+
+    const productPrice = document.createElement('p');
+    productPrice.innerText = '$' + product.price;
+    const productName = document.createElement('p');
+    productName.innerText = product.name;
+
+    productInfoDiv.append(productPrice, productName);
+
+    const productInfoFigure = document.createElement('figure');
+    const productImgCart = document.createElement('img');
+    productImgCart.setAttribute('src', './icons/bt_add_to_cart.svg');
+
+    productInfoFigure.appendChild(productImgCart);
+
+    productInfo.appendChild(productInfoDiv);
+    productInfo.appendChild(productInfoFigure);
+
+    productCards.appendChild(productImg);
+    productCards.appendChild(productInfo);
+
+    cardsContainer.appendChild(productCards);
+}
+}
+
+renderProducts(productList);
