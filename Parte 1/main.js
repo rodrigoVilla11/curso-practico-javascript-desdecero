@@ -5,10 +5,15 @@ const iconMenuMobile = document.querySelector('.menu')
 const shoppingCart = document.querySelector('.product-detail')
 const iconShoppingCart = document.querySelector('.navbar-shopping-cart')
 const cardsContainer = document.querySelector('.cards-container')
+const productDetailsCar = document.querySelector('.product-details')
+
 
 menuEmail.addEventListener('click', toggleDesktopMenu)
 iconMenuMobile.addEventListener('click', toggleMobileMenu)
 iconShoppingCart.addEventListener('click', toggleShoppingCart)
+/*productList[1, 3, 5, 7].addEventListener('click', toggleDetailsCar)*/
+
+
 
 function toggleDesktopMenu(){
     desktopMenu.classList.toggle('inactive');
@@ -44,6 +49,12 @@ function toggleShoppingCart(){
     shoppingCart.classList.toggle('inactive');
 
 }        
+/*function toggleDetailsCar(){
+    productDetailsCar.classList.toggle('inactive');
+    toggleDesktopMenu()
+    toggleShoppingCart()
+    toggleMobileMenu()
+}*/
 
 const productList = [];
 productList.push({
@@ -124,3 +135,4 @@ function renderProducts(arr){
 }
 
 renderProducts(productList);
+
