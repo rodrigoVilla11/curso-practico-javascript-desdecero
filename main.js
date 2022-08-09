@@ -176,7 +176,7 @@ function renderProducts(arr){
 
     const productInfoFigure = document.createElement('figure');
     const productImgCart = document.createElement('img');
-    productImgCart.setAttribute('src', './icons/bt_add_to_cart.svg');
+    productImgCart.setAttribute('src', './Parte 1/icons/bt_add_to_cart.svg');
 
     productInfoFigure.appendChild(productImgCart);
 
